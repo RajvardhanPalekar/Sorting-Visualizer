@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block head %}
+{% endblock %}
+
+{% block content %}
+    <style>
+        #arrayContainer {
+            margin-top: 1%;
+            margin-bottom: 2%;
+            width: 1005px;
+            height: 600px;
+            position: relative;
+            background: lightgray;
+        }
+        .arrayElement {
+            width: 15px;
+            margin-left: 5px;
+            margin-right: 5px;
+            position: absolute;
+            background-color: red;
+        }
+    </style>
+
+
+    <div class="container">
+        <br>
+        <h1 class="display-4">Sorting Visualiser</h1>
+        
+        <!-- <form class="form-inline"> -->
+             
+            <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref" id="sortType">
+                <option value="1">Bubble Sort</option>
+                <option value="2">Insertion Sort</option>
+                <option value="3">Merge Sort</option>
+                <option value="4">Selection Sort</option>
+                <option value="5">Heap Sort</option>
+            </select>
+
+            <button type="submit" class="btn btn-primary updateButton">Sort</button>
+
+        <!-- </form> -->
+
+
+        <div id="arrayContainer">
+            {% for x in range(50) %}
+                <div class="arrayElement" id="arrayElement_{{x}}" style="left: {{x*20}}px; height: {{array[x]}}px;">
+
+                </div>
+
+            {% endfor %}
+        </div>
+
+        <div id="resultMessage" style="display:none;">Success</div>
+
+    </div>
+
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="{{ url_for('static', filename='js/sort.js') }}"></script>
+{% endblock %}
