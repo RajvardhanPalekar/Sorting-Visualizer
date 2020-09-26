@@ -8,7 +8,7 @@
         #arrayContainer {
             margin-top: 1%;
             margin-bottom: 2%;
-            width: 1005px;
+            width: 605px;
             height: 600px;
             position: relative;
             background: lightgray;
@@ -18,7 +18,7 @@
             margin-left: 5px;
             margin-right: 5px;
             position: absolute;
-            background-color: red;
+            background-color: blue;
         }
     </style>
 
@@ -26,24 +26,21 @@
     <div class="container">
         <br>
         <h1 class="display-4">Sorting Visualiser</h1>
-        
-        <!-- <form class="form-inline"> -->
              
-            <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref" id="sortType">
-                <option value="1">Bubble Sort</option>
-                <option value="2">Insertion Sort</option>
-                <option value="3">Merge Sort</option>
-                <option value="4">Selection Sort</option>
-                <option value="5">Heap Sort</option>
-            </select>
+        <select class="custom-select my-1 mr-sm-2" id="sortType">
+            <option value="1">Bubble Sort</option>
+            <!-- <option value="2">Insertion Sort</option>
+            <option value="3">Merge Sort</option>
+            <option value="4">Selection Sort</option>
+            <option value="5">Heap Sort</option> -->
+        </select>
 
-            <button type="submit" class="btn btn-primary updateButton">Sort</button>
+        <button type="submit" class="btn btn-primary updateButton">Sort</button>
 
-        <!-- </form> -->
 
 
         <div id="arrayContainer">
-            {% for x in range(50) %}
+            {% for x in range(30) %}
                 <div class="arrayElement" id="arrayElement_{{x}}" style="left: {{x*20}}px; height: {{array[x]}}px;">
 
                 </div>
