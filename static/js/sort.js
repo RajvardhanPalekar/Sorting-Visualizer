@@ -1,6 +1,9 @@
 $(document).ready(function(){ 
     $('.updateButton').on('click', function(event) {
+
+        $(".updateButton").attr("disabled", true);
         var sortType = $('#sortType').val();
+        $("#sortType").attr("disabled", true);
         console.log("Sort Type : "+ sortType)
 
         var id = setInterval(frame, 100)
@@ -13,7 +16,7 @@ $(document).ready(function(){
                 },
                 success: function(data){
                     if(data.error) {
-                        $('#resultMessage').text(data.error).show()
+                        $('#resultMessage').text("Error : "+data.error).show()
                     }
                     else {
                         array_object = data.array_object
